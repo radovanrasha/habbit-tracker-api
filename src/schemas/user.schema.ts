@@ -11,7 +11,16 @@ export class User {
   @Prop({ required: true })
   password: string;
 
-  @Prop()
+  @Prop({
+    required: true,
+    unique: true,
+    validate: {
+      validator: (email: string) => {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      },
+      message: (props) => `${props.value} is not a valid email format!`,
+    },
+  })
   email: string;
 
   @Prop()

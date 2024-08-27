@@ -13,7 +13,7 @@ import { AuthController } from './auth.controller';
     UserModule,
     PassportModule,
     JwtModule.register({
-      secret: 'myfirstnestjsapp',
+      secret: 'habbittrackerappsecretkey',
       signOptions: { expiresIn: '60m' },
     }),
   ],
